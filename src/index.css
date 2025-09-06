@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #ECEEDF;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-pharma-brown text-white px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-pharma-dark px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg font-semibold border-2 border-pharma-brown hover:bg-pharma-brown hover:text-white transition-all duration-300 text-sm sm:text-base;
+  }
+  
+  .card {
+    @apply bg-pharma-beige rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+  
+  .section-padding {
+    @apply py-8 sm:py-12 lg:py-16 px-3 sm:px-4 md:px-6 lg:px-8;
+  }
+  
+  /* Mobile-specific utilities */
+  .mobile-text-sm {
+    @apply text-xs sm:text-sm;
+  }
+  
+  .mobile-text-base {
+    @apply text-sm sm:text-base;
+  }
+  
+  .mobile-text-lg {
+    @apply text-base sm:text-lg;
+  }
+  
+  .mobile-padding {
+    @apply px-3 sm:px-4 md:px-6;
+  }
+  
+  .mobile-gap {
+    @apply gap-3 sm:gap-4 md:gap-6;
+  }
+}
+
+@layer utilities {
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.2s ease-out;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
